@@ -1,0 +1,65 @@
+# HTCondor resubmit file for missing results
+container_image = docker://atharvavidwans/qiskit_algo:latest
+universe = container
+
+Executable = submit_run_algo.sh
+
+docker_pull_policy = ifnotpresent
+
+request_cpus = 1
+request_memory = 20GB
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = ../all_str_A_Q/circuits, run_algo.py
+request_disk = 20GB
+
+# Settings to automatically release held jobs
+periodic_release = (HoldReasonCode == 35)
+Log = ./log/job_log_25.log
+Output = ./output/job_output_25.txt
+Error = ./error/job_error_25.txt
+arguments = 25
++LongJob = True
+queue 1
+Log = ./log/job_log_65.log
+Output = ./output/job_output_65.txt
+Error = ./error/job_error_65.txt
+arguments = 65
++LongJob = True
+queue 1
+Log = ./log/job_log_67.log
+Output = ./output/job_output_67.txt
+Error = ./error/job_error_67.txt
+arguments = 67
++LongJob = True
+queue 1
+Log = ./log/job_log_89.log
+Output = ./output/job_output_89.txt
+Error = ./error/job_error_89.txt
+arguments = 89
++LongJob = True
+queue 1
+Log = ./log/job_log_144.log
+Output = ./output/job_output_144.txt
+Error = ./error/job_error_144.txt
+arguments = 144
++LongJob = True
+queue 1
+Log = ./log/job_log_164.log
+Output = ./output/job_output_164.txt
+Error = ./error/job_error_164.txt
+arguments = 164
++LongJob = True
+queue 1
+Log = ./log/job_log_200.log
+Output = ./output/job_output_200.txt
+Error = ./error/job_error_200.txt
+arguments = 200
++LongJob = True
+queue 1
+Log = ./log/job_log_213.log
+Output = ./output/job_output_213.txt
+Error = ./error/job_error_213.txt
+arguments = 213
++LongJob = True
+queue 1

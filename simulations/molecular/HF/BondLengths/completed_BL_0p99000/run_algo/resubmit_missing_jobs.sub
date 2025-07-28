@@ -1,0 +1,47 @@
+# HTCondor resubmit file for missing results
+container_image = docker://atharvavidwans/qiskit_algo:latest
+universe = container
+
+Executable = submit_run_algo.sh
+
+docker_pull_policy = ifnotpresent
+
+request_cpus = 1
+request_memory = 20GB
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = ../all_str_A_Q/circuits, run_algo.py
+request_disk = 20GB
+
+# Settings to automatically release held jobs
+periodic_release = (HoldReasonCode == 35)
+Log = ./log/job_log_22.log
+Output = ./output/job_output_22.txt
+Error = ./error/job_error_22.txt
+arguments = 22
++LongJob = True
+queue 1
+Log = ./log/job_log_48.log
+Output = ./output/job_output_48.txt
+Error = ./error/job_error_48.txt
+arguments = 48
++LongJob = True
+queue 1
+Log = ./log/job_log_59.log
+Output = ./output/job_output_59.txt
+Error = ./error/job_error_59.txt
+arguments = 59
++LongJob = True
+queue 1
+Log = ./log/job_log_64.log
+Output = ./output/job_output_64.txt
+Error = ./error/job_error_64.txt
+arguments = 64
++LongJob = True
+queue 1
+Log = ./log/job_log_173.log
+Output = ./output/job_output_173.txt
+Error = ./error/job_error_173.txt
+arguments = 173
++LongJob = True
+queue 1
